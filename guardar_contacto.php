@@ -1,5 +1,13 @@
 <?php
 include("conexion.php");
+include("config_email.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'lib/phpmailer/Exception.php';
+require 'lib/phpmailer/PHPMailer.php';
+require 'lib/phpmailer/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -21,25 +29,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("ssss", $nombre, $email, $asunto, $mensaje);
 
     if ($stmt->execute()) {
-        // send notification email to site owner (Gmail) using PHP mail()
-        $to = "angelbenavente2608@gmail.com"; // change to your Gmail address
-        $emailSubject = "Nuevo mensaje de contacto";
-        $emailBody  = "Has recibido un nuevo mensaje de contacto:\n";
-        $emailBody .= "Nombre: $nombre\n";
-        $emailBody .= "Email: $email\n";
-        $emailBody .= "Asunto: $asunto\n\n";
-        $emailBody .= "Mensaje:\n$mensaje\n";
+        // Enviar correo usando PHPMailer
+        $mail = new PHPMailer(true);
+        
+        try {
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = GMAIL_USER;
+            $mail->Password   = GMAIL_PASSWORD;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
 
-        $headers  = "From: $email" . "\r\n";
-        $headers .= "Reply-To: $email" . "\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
+            $mail->setFrom(GMAIL_USER, GMAIL_FROM_NAME);
+            $mail->addAddress(GMAIL_USER);
+            $mail->addReplyTo($email, $nombre);
 
-        // note: when running on localhost you must configure SMTP settings in php.ini
-        // or use a library like PHPMailer to send via Gmail SMTP with authentication.
-        @mail($to, $emailSubject, $emailBody, $headers);
+            $mail->isHTML(false);
+            $mail->Subject = "Nuevo mensaje de contacto";
+            $mail->Body    = "Has recibido un nuevo mensaje:\n\n"
+                           . "Nombre: $nombre\n"
+                           . "Email: $email\n"
+                           . "Asunto: $asunto\n\n"
+                           . "Mensaje:\n$mensaje";
 
-        header("Location: gracias.html");
-        exit;
+            $mail->send();
+            
+            header("Location: gracias.html");
+            exit;
+        } catch (Exception $e) {
+            echo "Error al enviar el correo: " . $mail->ErrorInfo;
+        }
     } else {
         echo "Error al guardar el mensaje.";
     }
