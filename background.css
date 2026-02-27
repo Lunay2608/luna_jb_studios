@@ -1,0 +1,18 @@
+/* background.css: estilo para imagen de fondo */
+
+/* Clase que usa la imagen como fondo y se adapta al tamaño de la pantalla */
+.hero-bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("img/fondo-01.jpg");
+    background-size: cover;      /* ajusta la imagen para cubrir todo el contenedor */
+    background-position: center;  /* centra la imagen si se recorta */
+    background-repeat: no-repeat;
+}
+
+/* Si quieres usar la imagen dentro de un <img> y hacerla responsiva */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

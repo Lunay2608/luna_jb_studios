@@ -1,0 +1,257 @@
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #3e1d4a; /* Color base oscuro */
+    color: #ffffff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #6567ac;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3 {
+    color: #6567ac;
+    margin-top: 15px;
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.05); /* Capa sutil sobre el fondo */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección Información Personal */
+#informacion p strong {
+    color: #ffffff;
+}
+
+#informacion ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#informacion li {
+    background: linear-gradient(90deg, #6567ac, #6567ac);
+    margin: 5px 0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Sección Portafolio (Grid) */
+#portafolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#portafolio div {
+    background-color: #3e1d4a;
+    border: 1px solid #7c337f;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+#portafolio div:hover {
+    transform: translateY(-5px);
+    border-color: #6567ac;
+}
+
+#portafolio img {
+    width: 100%;
+    max-width: 825px; /* adapt to requested size */
+    height: auto;
+    max-height: 1055px;
+    background-color: #6567ac; /* Color de relleno mientras pones imágenes */
+    border-radius: 5px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+/* Sección Contacto */
+#contacto {
+    text-align: center;
+    border: 2px solid #6567ac;
+    padding: 20px; /* add space inside the contact section */
+}
+
+/* Estilos de botones usados en navegación y otros enlaces */
+.botones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #3e1d4a;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Formulario de contacto */
+.enviar-mensaje {
+    margin-top: 30px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* make fields full width */
+    max-width: 600px; /* allow larger boxes */
+    padding: 12px 16px; /* more padding for larger appearance */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e8f0fe; /* lighter blue base */
+    color: #333;
+    font-size: 1.1rem; /* slightly larger text */
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    width: 100%;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-enviar {
+    display: inline-block;
+    background-color: #6567ac;
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #7c337f;
+    transform: translateY(-2px);
+}
+
+#contacto p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Viewer detail section */
+#detalle {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+#detalle-contenido img {
+    max-width: 100%;
+    max-height: 600px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+#detalle-caption {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* Lightbox modal (legacy, hidden) */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+#lightbox.show {
+    opacity: 1;
+}
+#lightbox.hidden {
+    display: none;
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+#lightbox-caption {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    max-width: 90%;
+}
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}

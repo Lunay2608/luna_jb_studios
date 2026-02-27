@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portafolio</title>
+    <link rel="stylesheet" href="stilos.css">
+</head>
+<body>
+    <section id="galeria">
+        <button class="btn" onclick="history.back()">← Atrás</button>
+        <h2>Portafolio</h2>
+
+        <div id="portafolio">
+            <div>
+                <h3>Botella con gotas</h3>
+                <p>Fotografía editada de botella con gotas.</p>
+                <img src="Portafolio/botella con gotas M.psd.jpg" alt="Botella con gotas" class="lightbox-item" data-full="Portafolio/botella con gotas M.psd.jpg">
+            </div>
+
+            <div>
+                <h3>Botella de midea playa</h3>
+                <p>Escena de playa con botella.</p>
+                <img src="Portafolio/Botella de midea playa.jpg" alt="Botella de midea playa" class="lightbox-item" data-full="Portafolio/Botella de midea playa.jpg">
+            </div>
+
+            <div>
+                <h3>Doritos</h3>
+                <p>Diseño publicitario para Doritos.</p>
+                <img src="Portafolio/Doritos.jpg" alt="Doritos" class="lightbox-item" data-full="Portafolio/Doritos.jpg">
+            </div>
+
+            <div>
+                <h3>Guitarra</h3>
+                <p>Ilustración de guitarra.</p>
+                <img src="Portafolio/F. - Guitarra copia.jpg" alt="Guitarra" class="lightbox-item" data-full="Portafolio/F. - Guitarra copia.jpg">
+            </div>
+
+            <div>
+                <h3>Ilustración</h3>
+                <p>Trabajo de ilustración digital.</p>
+                <img src="Portafolio/Ilustración.jpg" alt="Ilustración" class="lightbox-item" data-full="Portafolio/Ilustración.jpg">
+            </div>
+
+            <div>
+                <h3>Perfume</h3>
+                <p>Proyecto de envase de perfume.</p>
+                <img src="Portafolio/IMG. Perfume.jpg" alt="Perfume" class="lightbox-item" data-full="Portafolio/IMG. Perfume.jpg">
+            </div>
+
+            <div>
+                <h3>IMG 0066</h3>
+                <p>Imagen de muestra 0066.</p>
+                <img src="Portafolio/IMG_0066.jpg" alt="IMG_0066" class="lightbox-item" data-full="Portafolio/IMG_0066.jpg">
+            </div>
+
+            <div>
+                <h3>IMG 0074</h3>
+                <p>Imagen de muestra 0074.</p>
+                <img src="Portafolio/IMG_0074.jpg" alt="IMG_0074" class="lightbox-item" data-full="Portafolio/IMG_0074.jpg">
+            </div>
+
+            <div>
+                <h3>La Casa Búho</h3>
+                <p>Fotografía de casa con búho.</p>
+                <img src="Portafolio/La Casa Bùho.jpg" alt="La Casa Búho" class="lightbox-item" data-full="Portafolio/La Casa Bùho.jpg">
+            </div>
+
+            <div>
+                <h3>Little Witch Academy</h3>
+                <p>Portada de Little Witch Academy.</p>
+                <img src="Portafolio/litte witch Academy.jpg" alt="Little Witch Academy" class="lightbox-item" data-full="Portafolio/litte witch Academy.jpg">
+            </div>
+
+            <div>
+                <h3>Pepsi Banner</h3>
+                <p>Banner promocional de Pepsi.</p>
+                <img src="Portafolio/PEPSI BANER P.jpg" alt="Pepsi Banner" class="lightbox-item" data-full="Portafolio/PEPSI BANER P.jpg">
+            </div>
+
+            <div>
+                <h3>Video - Trailer</h3>
+                <p>Video de demostración.</p>
+                <video controls width="100%" style="max-width:600px;">
+                    <source src="Portafolio/Trailer.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // redirigir a img.html con parámetros
+    document.querySelectorAll('#portafolio img.lightbox-item').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            const full = img.getAttribute('data-full') || img.src;
+            const caption = img.alt || '';
+            window.location.href = 'img.html?img=' + encodeURIComponent(full) + '&caption=' + encodeURIComponent(caption);
+        });
+    });
+    </script>
+
+</body>
+</html>

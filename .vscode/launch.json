@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+  {
+            "name": "Chrome",
+            "port": 9222,
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost//proyectofinal/index.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

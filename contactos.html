@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Luna JB Studios</title>
+    <link rel="stylesheet" href="stilos.css">
+</head>
+<body>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contacto-info">
+            <p><strong>Email:</strong> angelbenavente2608@gmail.com</p>
+            <p><strong>Teléfono y WhatsApp:</strong> +52 871-197-2149</p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/angelbenavente</p>
+            <p><strong>Instagram:</strong> @angeLuna2b</p>
+        <div class="enviar-mensaje">
+            <br><h3>Envíame un mensaje</h3>
+        </br>
+           <form class="contact-form" action="guardar_contacto.php" method="POST">
+
+                <div class="form-group">
+                    <input id="name" type="text" name="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <input id="email" type="email" name="email" placeholder="Tu correo (Gmail)" required>
+                </div>
+                <div class="form-group">
+                    <input id="subject" type="text" name="subject" placeholder="Asunto">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar a Gmail ▶</button>
+
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

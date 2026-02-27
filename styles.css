@@ -1,0 +1,91 @@
+/* 1. Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #1a0b2e; /* Color oscuro de respaldo */
+    color: white;
+    overflow: hidden; /* Evita scrolls innecesarios en la portada */
+}
+
+/* 2. Sección Hero (Portada) */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/fondo-01.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 3. Contenedor de Contenido */
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Efecto cristal sutil */
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 4. Estilos de Texto */
+.texto h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: #d187ff; /* Morado claro inspirado en la imagen */
+    margin-bottom: 10px;
+}
+
+.texto h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+.texto p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* 5. Logo */
+.logo img {
+    width: 120px; /* Ajusta según el tamaño de tu logo */
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(209, 135, 255, 0.5));
+}
+
+/* 6. Botón de Inicio */
+.btn-inicio {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #d187ff;
+    color: #1a0b2e;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.btn-inicio:hover {
+    background-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(209, 135, 255, 0.8);
+}
